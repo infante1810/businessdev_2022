@@ -69,3 +69,61 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Installing
+    
+
+### Install dependencies:
+
+    composer install
+    npm install
+
+
+
+### Generate configuration file
+   In the root of the folder rename the file `.env.example` to `.env` or use 
+    
+  * Remeber to set DATABASE NAME
+    ```
+    cp .env.example .env
+    ```
+    
+
+### Generate API Key
+    
+    php artisan key:generate
+    
+
+### Migrations.
+  * run the migrations with
+    ```
+    php artisan migrate --seed
+    ```
+    Generates migrations and populates the DB with default data
+
+  * Utilities
+
+    This deletes all the tables from the database
+    ```
+    php artisan db:wipe
+    ```
+
+    This deletes all the tables from the database and recreates all the tables. The --seed option populates the DB with default data
+    ```
+    php artisan migrate:refresh --seed
+    ```
+  * Or if doesn't work use this commands
+
+    ```
+    php artisan db:seed --class
+    
+### Starting a local development server
+    
+    php artisan server
+
+  If you are using a virtual host routing to an ip 127.0.0.1, you may use this:
+    
+    php artisan server --host 127.0.0.1 --port 80
+
+
+        
